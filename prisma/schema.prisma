@@ -201,7 +201,7 @@ model Vendor {
   user            User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   store           Store?
   products        Product[]
-  orders          Order[]     // as vendor
+subOrders       SubOrder[]   // as vendor
   reviews         Review[]
   payouts         Payout[]
   staff           StoreStaff[]
