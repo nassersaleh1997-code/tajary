@@ -25,7 +25,7 @@ export default async function VendorDashboard() {
     include: {
       store: true,
       products: { select: { id: true, stockQuantity: true, lowStockThreshold: true, status: true } },
-      orders: {
+      subOrders: {
         take: 5,
         orderBy: { createdAt: "desc" },
         include: { order: true },
@@ -97,7 +97,7 @@ export default async function VendorDashboard() {
             <ShoppingBag className="h-4 w-4" />
             <span className="text-sm">الطلبات</span>
           </div>
-          <p className="text-2xl font-bold">{vendor.orders.length}</p>
+          <p className="text-2xl font-bold">{vendor.subOrders.length}</p>
         </div>
         <div className="rounded-2xl border bg-white p-5">
           <div className="mb-2 flex items-center gap-2 text-muted-foreground">
